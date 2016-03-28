@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "bin/server & cp src/app/index.html dist && webpack --watch",
+    "watch": "cp src/app/index.html dist && webpack --watch",
+    "build": "cp src/app/index.html dist && webpack -p",
     "start": "bin/server"
   },
   "keywords": [
