@@ -14,18 +14,11 @@ class Row extends React.Component {
       data: this.props.data
     };
   }
-  start(button) {
-    return this.props.data.status == button ? 'hide' : '';
-  }
-  done() {
-    
+  changeStatus(status) {
+    AppActions.changeStatusTask(this.props.data, status, this.props.data.status);
   }
   delete() {
-    // TODOSERVICE.deleteTask(this.props.data).done(() => {
-    //   console.log('borrada');
-    // })
-    // console.log(this)
-    // AppActions.removeTask(this.props.data);
+    AppActions.removeTask(this.props.data, this.props.data.status);
   }
   
   render () {
@@ -41,7 +34,7 @@ class Row extends React.Component {
     })
     
     var showDoneButton = this.props.data.status;
-    return <row>
+    return <li>
       <div className="row">
           <div className="col-xs-7">
               <span className={`badged `+this.props.data.status}></span>
@@ -49,13 +42,13 @@ class Row extends React.Component {
           </div>
           
           <div className="col-xs-5">
-              <button type="button" className={todoClass}>todo</button>
-              <button type="button" className={startClass}>start</button>
-              <button type="button" className={doneClass}>done</button>
+              <button type="button" className={todoClass} onClick={this.changeStatus.bind(this, 'todo')}>todo</button>
+              <button type="button" className={startClass} onClick={this.changeStatus.bind(this, 'start')}>start</button>
+              <button type="button" className={doneClass} onClick={this.changeStatus.bind(this, 'done')}>done</button>
               <button type="button" onClick={this.delete.bind(this)}>delete</button>
           </div>
       </div>
-    </row>;
+    </li>;
   }
 }
 

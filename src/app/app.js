@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchBox from './components/searchbox';
+import InputBox from './components/input-box';
 import Menu from './menu';
 import Tasks from './tasks';
 import NotFoundPage from './not-found-page';
-import RouteManager from './routeManager';
 import { Router, Route, Link, browserHistory, hashHistory, IndexRoute } from 'react-router'
 
 require("../sass/main.scss");
@@ -15,7 +14,7 @@ class App extends React.Component {
     }
     render() {
       return <div>
-      <SearchBox/>
+      <InputBox/>
         <Menu/>
         
         {this.props.children}

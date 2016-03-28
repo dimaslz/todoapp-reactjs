@@ -8,9 +8,18 @@ class Menu extends React.Component {
     }
     render() {
       return <div>
-        <Link to="/">Home</Link>
-        <Link to={`/tasks/started`}>Start</Link>
-        <Link to={`/tasks/done`}>Done</Link>
+        <ul className="options">
+          <li><Link to="/">
+          <i className="fa fa-list fa-2x"></i>
+          <span>All</span>
+          </Link></li>
+          <li><Link to={`/tasks/started`}>
+          <i className="fa fa-hourglass-start fa-2x"></i>
+          <span>Start</span></Link></li>
+          <li><Link to={`/tasks/done`}>
+          <i className="fa fa-check fa-2x"></i>
+          <span>Done</span></Link></li>
+        </ul>
       </div>;
     }
 }

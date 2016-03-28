@@ -5958,29 +5958,29 @@ ul.options {
       opacity: 0.5;
       filter: alpha(opacity=50); }
 
-ul.list, row {
+ul.list {
   float: left;
   width: 100%;
   list-style: none;
   text-align: left;
   font-size: 14px; }
-  ul.list .row, row .row {
+  ul.list li {
     display: block;
     float: left;
     width: 100%;
     padding: 5px; }
-    ul.list .row .badged, row .row .badged {
+    ul.list li .badged {
       float: inherit; }
-    ul.list .row .title, row .row .title {
+    ul.list li .title {
       display: table;
       line-height: 28px; }
-    ul.list .row:hover button, row .row:hover button {
+    ul.list li:hover button {
       background: cornflowerblue; }
-    ul.list .row:nth-child(odd), row .row:nth-child(odd) {
-      background: white; }
-    ul.list .row span, row .row span {
+    ul.list li span {
       line-height: 25px; }
-    ul.list .row button, row .row button {
+    ul.list li:nth-child(odd) {
+      background: white; }
+    ul.list li button {
       float: right;
       margin: 1px;
       color: white;
@@ -5991,6 +5991,6 @@ ul.list, row {
       border-radius: 3px;
       margin: 2px;
       cursor: pointer; }
-      ul.list .row button:hover, row .row button:hover {
+      ul.list li button:hover {
         opacity: 0.8;
         filter: alpha(opacity=80); }

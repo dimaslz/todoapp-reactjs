@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch & cp src/app/index.html dist"
+    "watch": "cp src/app/index.html dist && webpack --watch"
   },
   "keywords": [
     "react",
     "todo",
     "js"
   ],
-  "author": "Dimas López <dimaslopezzurita@gmail.com> (http://dimaslz.io)",
+  "author": "Dimas López <me@dimaslz.io> (http://dimaslz.io)",
   "license": "ISC",
   "dependencies": {
     "flux": "^2.1.1",
@@ -35,14 +35,6 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "gulp": "^3.9.0",
-    "gulp-cli": "^1.0.0",
-    "gulp-duration": "0.0.0",
-    "gulp-if": "^2.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7",
     "lodash": "^3.10.1",
     "node-notifier": "^4.4.0",
     "node-sass": "^3.4.2",

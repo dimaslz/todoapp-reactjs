@@ -168,14 +168,14 @@ ul.options {
     }
 }
 
-ul.list, row {
+ul.list {
     float: left;
     width: 100%;
     list-style: none;
     text-align: left;
     font-size: 14px;
     
-    .row {
+    li {
         display: block;
         float: left;
         width: 100%;
@@ -191,11 +191,11 @@ ul.list, row {
         &:hover button {
             background: cornflowerblue;
         }
-        &:nth-child(odd) {
-            background: white;
-        }
         span {
             line-height: 25px;
+        }
+        &:nth-child(odd) {
+          background: white;
         }
         button {
             float: right;

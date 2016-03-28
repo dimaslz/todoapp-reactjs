@@ -21,16 +21,8 @@ class Tasks extends React.Component {
       
       this._onChange = this._onChange.bind(this);
     }
-    getTasks(status) {
-      AppAction.getTasks().done((result) => {
-        this.setState({rows: result.data});
-        AppDispatcher.handleViewAction({
-            actionType: 'GET_TASKS',
-            action: result.data
-        });
-      });
-    }
-    _onChange(status) {
+    _onChange() {
+      var status = this.props.params.status || '';
       AppAction.getTasks(status).done((result) => {
         this.setState({rows: result.data});
       });
@@ -43,31 +35,30 @@ class Tasks extends React.Component {
     }
     componentDidMount() {
       // this.getTasks(this.props.params.status);
-      this._onChange(this.props.params.status || '');
+      this._onChange();
     }
     componentWillMount() {
       TODOSERVICE.addChangeListener(this._onChange)
     }
-    
     componentDidUpdate (prevProps) {
       let oldId = prevProps.params.status
       let newId = this.props.params.status
       if (newId !== oldId)
         // this.getTasks(this.props.params.status);
-        this._onChange(this.props.params.status || '');
+        this._onChange();
     }
     componentWillUnmount() {
       TODOSERVICE.removeChangeListener(this._onChange)
     }
-    delete(task) {
-      console.log(task, this);
-    }
     
     render() { 
       return <div>
-        <p>Started</p>
-        
-        <ul>
+        <ul className="status-examples pull-right">
+          <li><span className="badged"></span>Listed</li>
+          <li><span className="badged started"></span>Started</li>
+          <li><span className="badged done"></span> Done</li>
+        </ul>
+        <ul className="list">
         {this.state.rows.map((value, index) => (
           <Row key={index} data={value}/>
         ))}
